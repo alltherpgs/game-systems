@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkFriends": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"friendId": {
+						"type": "string"
+					},
+					"friendName": {
+						"type": "string"
+					},
+					"friendDescription": {
+						"type": "string"
+					},
+					"customFriend": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"friendId",
+					"friendName",
+					"friendDescription",
+					"customFriend"
+				]
+			},
+			"required": [
+				"bladesInTheDarkSpecialAbility items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkFriends"
+	]
+}

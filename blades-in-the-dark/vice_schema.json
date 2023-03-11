@@ -1,0 +1,53 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkVices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"viceId": {
+						"type": "string"
+					},
+					"viceName": {
+						"type": "string"
+					},
+					"viceDescription": {
+						"type": "string"
+					},
+					"customVice": {
+						"type": "boolean"
+					},
+					"vicePurveyorId": {
+						"type": "string"
+					},
+					"vicePurveyorName": {
+						"type": "string"
+					},
+					"vicePurveyorDescription": {
+						"type": "string"
+					},
+					"customVicePurveyor": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"viceId",
+					"viceName",
+					"viceDescription",
+					"customVice",
+					"vicePurveyorId",
+					"vicePurveyorName",
+					"vicePurveyorDescription",
+					"customVicePurveyor"
+				]
+			},
+			"required": [
+				"bladesInTheDarkRivals items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkVices"
+	]
+}

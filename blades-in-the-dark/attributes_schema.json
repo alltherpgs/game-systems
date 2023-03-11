@@ -1,0 +1,75 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkAttributes": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"attributeId": {
+						"type": "string"
+					},
+					"attributeName": {
+						"type": "string"
+					},
+					"attributeDescription": {
+						"type": "string"
+					},
+					"customAttribute": {
+						"type": "boolean"
+					},
+					"actionId": {
+						"type": [
+							"array",
+							"null"
+						],
+						"items": {
+							"type": [
+								"object",
+								"null"
+							],
+							"properties": {
+								"actionId": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"actionName": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"actionDescription": {
+									"type": [
+										"string",
+										"null"
+									]
+								},
+								"customAction": {
+									"type": [
+										"string",
+										"null"
+									]
+								}
+							}
+						}
+					}
+				},
+				"required": [
+					"attributeId",
+					"attributeName",
+					"attributeDescription",
+					"customAttribute"
+				]
+			},
+			"required": [
+				"bladesInTheDarkCrew items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkAttributes"
+	]
+}

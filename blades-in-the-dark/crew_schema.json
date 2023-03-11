@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkCrew": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"crewId": {
+						"type": "string"
+					},
+					"crewName": {
+						"type": "string"
+					},
+					"crewDescription": {
+						"type": "string"
+					},
+					"customCrew": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"crewId",
+					"crewName",
+					"crewDescription",
+					"customCrew"
+				]
+			},
+			"required": [
+				"bladesInTheDarkHeritage items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkCrew"
+	]
+}

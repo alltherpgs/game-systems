@@ -1,0 +1,301 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesinthedark": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"alias": {
+						"type": "string"
+					},
+					"characterDescription": {
+						"type": "string"
+					},
+					"playbookType": {
+						"type": "object",
+						"properties": {
+							"playbookTypeId": {
+								"type": "string"
+							},
+							"playbookTypeName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"playbookTypeId",
+							"playbookTypeName"
+						]
+					},
+					"heritage": {
+						"type": "object",
+						"properties": {
+							"heritageId": {
+								"type": "string"
+							},
+							"heritageName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"heritageId",
+							"heritageName"
+						]
+					},
+					"background": {
+						"type": "object",
+						"properties": {
+							"backgroundId": {
+								"type": "string"
+							},
+							"backgroundName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"backgroundId",
+							"backgroundName"
+						]
+					},
+					"crew": {
+						"type": "object",
+						"properties": {
+							"crewId": {
+								"type": "string"
+							},
+							"crewName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"crewId",
+							"crewName"
+						]
+					},
+					"attributes": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"attributeId": {
+									"type": "string"
+								},
+								"attributeName": {
+									"type": "string"
+								},
+								"actions": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"actionId": {
+												"type": "string"
+											},
+											"actionName": {
+												"type": "string"
+											},
+											"actionScore": {
+												"type": "number"
+											}
+										},
+										"required": [
+											"actionId",
+											"actionName",
+											"actionScore"
+										]
+									},
+									"required": [
+										"actions items"
+									]
+								}
+							},
+							"required": [
+								"attributeId",
+								"attributeName",
+								"actions"
+							]
+						},
+						"required": [
+							"attributes items"
+						]
+					},
+					"specialAbilities": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"specialAbilitiesId": {
+									"type": "string"
+								},
+								"specialAbilitiesName": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"specialAbilitiesId",
+								"specialAbilitiesName"
+							]
+						},
+						"required": [
+							"specialAbilities items"
+						]
+					},
+					"closeFriend": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"closeFriendId": {
+									"type": "string"
+								},
+								"closeFriendName": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"closeFriendId",
+								"closeFriendName"
+							]
+						},
+						"required": [
+							"closeFriend items"
+						]
+					},
+					"rival": {
+						"type": "object",
+						"properties": {
+							"rivalId": {
+								"type": "string"
+							},
+							"rivalName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"rivalId",
+							"rivalName"
+						]
+					},
+					"vice": {
+						"type": "object",
+						"properties": {
+							"viceId": {
+								"type": "string"
+							},
+							"viceName": {
+								"type": "string"
+							},
+							" vicePurveyorId": {
+								"type": [
+									"string",
+									"null"
+								]
+							},
+							" vicePurveyor": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"viceId",
+							"viceName",
+							" vicePurveyor"
+						]
+					},
+					"characterItems": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"itemId": {
+									"type": "string"
+								},
+								"itemName": {
+									"type": "string"
+								},
+								"itemType": {
+									"type": "string"
+								},
+								"itemDescription": {
+									"type": [
+										"string",
+										"null"
+									]
+								}
+							},
+							"required": [
+								"itemId",
+								"itemName",
+								"itemType"
+							]
+						},
+						"required": [
+							"characterItems items"
+						]
+					},
+					"gameStats": {
+						"type": [
+							"object",
+							"null"
+						],
+						"properties": {
+							"heatLevel": {
+								"type": [
+									"string",
+									"null"
+								]
+							},
+							"stress": {
+								"type": [
+									"string",
+									"null"
+								]
+							},
+							"harm": {
+								"type": [
+									"string",
+									"null"
+								]
+							},
+							"stash": {
+								"type": [
+									"string",
+									"null"
+								]
+							},
+							"coin": {
+								"type": [
+									"string",
+									"null"
+								]
+							}
+						}
+					}
+				},
+				"required": [
+					"name",
+					"alias",
+					"characterDescription",
+					"playbookType",
+					"heritage",
+					"background",
+					"crew",
+					"attributes",
+					"specialAbilities",
+					"closeFriend",
+					"rival",
+					"vice",
+					"characterItems"
+				]
+			},
+			"required": [
+				"bladesinthedark items"
+			]
+		}
+	},
+	"required": [
+		"bladesinthedark"
+	]
+}

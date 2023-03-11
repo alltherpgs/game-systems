@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkPlaybook": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"playbookTypeId": {
+						"type": "string"
+					},
+					"playbookTypeName": {
+						"type": "string"
+					},
+					"playbookTypeDescription": {
+						"type": "string"
+					},
+					"customPlaybook": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"playbookTypeId",
+					"playbookTypeName",
+					"playbookTypeDescription",
+					"customPlaybook"
+				]
+			},
+			"required": [
+				"bladesinthedarkplaybook items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkPlaybook"
+	]
+}

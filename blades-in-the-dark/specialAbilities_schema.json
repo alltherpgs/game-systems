@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkSpecialAbilities": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"specialAbilityId": {
+						"type": "string"
+					},
+					"specialAbilityName": {
+						"type": "string"
+					},
+					"specialAbilityDescription": {
+						"type": "string"
+					},
+					"customSpecialAbility": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"specialAbilityId",
+					"specialAbilityName",
+					"specialAbilityDescription",
+					"customSpecialAbility"
+				]
+			},
+			"required": [
+				"bladesInTheDarkCrew items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkSpecialAbilities"
+	]
+}

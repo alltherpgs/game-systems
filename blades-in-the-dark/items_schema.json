@@ -1,0 +1,41 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkCharacterItems": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"itemId": {
+						"type": "string"
+					},
+					"itemName": {
+						"type": "string"
+					},
+					"itemType": {
+						"type": "string"
+					},
+					"itemDescription": {
+						"type": "string"
+					},
+					"customItem": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"itemId",
+					"itemName",
+					"itemType",
+					"itemDescription",
+					"customItem"
+				]
+			},
+			"required": [
+				"bladesInTheDarkVices items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkCharacterItems"
+	]
+}

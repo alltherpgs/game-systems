@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkRivals": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"rivalId": {
+						"type": "string"
+					},
+					"rivalName": {
+						"type": "string"
+					},
+					"rivalDescription": {
+						"type": "string"
+					},
+					"customRival": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"rivalId",
+					"rivalName",
+					"rivalDescription",
+					"customRival"
+				]
+			},
+			"required": [
+				"bladesInTheDarkFriends items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkRivals"
+	]
+}

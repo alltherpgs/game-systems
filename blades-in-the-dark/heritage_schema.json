@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"properties": {
+		"bladesInTheDarkHeritage": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"heritageId": {
+						"type": "string"
+					},
+					"heritageName": {
+						"type": "string"
+					},
+					"heritageDescription": {
+						"type": "string"
+					},
+					"customHeritage": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"heritageId",
+					"heritageName",
+					"heritageDescription",
+					"customHeritage"
+				]
+			},
+			"required": [
+				"bladesInTheDarkPlaybook items"
+			]
+		}
+	},
+	"required": [
+		"bladesInTheDarkHeritage"
+	]
+}
