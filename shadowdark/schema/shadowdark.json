@@ -50,9 +50,21 @@
       },
       "xp": {
          "description": "Your character's experience points gained by completing adventures.",
-         "type": "integer",
-         "minimum": 0,
-         "maximum": 100
+         "type": "object",
+         "properties": {
+            "current": {
+               "description": "Current experience points",
+               "type": "integer",
+               "minimum": 0,
+               "maximum": 100
+            },
+            "next": {
+               "description": "Experience points needed to reach the next level",
+               "type": "integer",
+               "multipleOf" : 10
+            }
+         },
+         "required": [ "current", "next" ]
       },
       "stats" : {
          "description": "Your character's physical and mental attributes.",
@@ -129,6 +141,16 @@
             "additionalProperties": false
          }
       },
+      "languages" : {
+         "description": "Your character's languages.",
+         "type": "array",
+         "items": {
+            "type": "string",
+            "enum": ["Common", "Dwarvish", "Elvish", "Giant", "Goblin", "Merran", "Orcish", "Repillian", "Sylvan", "Thanian", "Celestial", "Diabolic", "Draconic", "Primordia", "Other"]
+         },
+         "uniqueItems": true,
+         "minItems": 1
+      },
       "talents" : {
          "description": "Your character's talents.",
          "type": "array",
@@ -169,23 +191,64 @@
       },
       "gear": {
          "description": "Your character's gear.",
-         "type": "array",
-         "items": {
-            "type": "object",
+         "type": "object",
             "properties": {
-               "name": {
-                  "description": "The name of the item",
-                  "type": "string"
+               "coins" : {
+                  "description": "Your character's coins.",
+                  "type": "object",
+                  "properties": {
+                     "gp": {
+                        "description": "The number of gold coins carried",
+                        "type": "integer",
+                        "minimum": 0
+                     },
+                     "sp": {
+                        "description": "The number of silver coins carried",
+                        "type": "integer",
+                        "minimum": 0
+                     },
+                     "cp": {
+                        "description": "The number of copper coins carried",
+                        "type": "integer",
+                        "minimum": 0
+                     }
+                  },
+                  "required": [ "gp", "sp", "cp" ],
+                  "additionalProperties": false
                },
-               "quantity": {
-                  "description": "The quantity item",
-                  "type": "integer"
+               "items": {
+                  "description": "Your character's inventory.",
+                  "type": "array",
+                  "items": {
+                     "type": "object",
+                     "properties": {
+                        "name": {
+                           "description": "The name of the item",
+                           "type": "string"
+                        },
+                        "quantity": {
+                           "description": "The quantity carried in the slot",
+                           "type": "integer"
+                        }
+                     },
+                     "required": [ "name", "quantity" ],
+                     "additionalProperties": false
+                  },
+                  "minItems": 0
+               },
+               "freetocarry": {
+                  "description": "The free to carry items",
+                  "type": "array",
+                  "items": {
+                     "type": "string"
+                  },
+                  "minimum": 0
                }
             },
-            "required": [ "name", "quantity" ],
+            "required": [ "coins" ],
             "additionalProperties": false
-         }
       },
+      
       "atrg-meta": {
          "type": "object",
          "description": "AllTheRPGs Metadata for the character which is not part of the character sheet or game system",
@@ -253,7 +316,8 @@
                "minimum": -4,
                "maximum": 4
             }
-         }
+         },
+         "additionalProperties": false
       }
    },
    "allOf": [
@@ -870,6 +934,6 @@
          "then": { "properties": { "title": { "const": "Sorcerer" } } }
       }
    ],
-   "required": [ "name", "class", "title", "stats" ],
+   "required": [ "name", "ancestry", "class", "level", "alignment", "background", "title", "stats", "xp", "ac", "hp", "languages", "gear" ],
    "additionalProperties": false
 }

@@ -1,7 +1,7 @@
 {
    "$schema": "../schema/shadowdark.json",
    "name": "Tranglestomp Fudlydump",
-   "ancestry":"Dwarf",
+   "ancestry":"Elf",
    "class": "Thief",
    "level": 1,
    "alignment": "Lawful",
@@ -34,7 +34,25 @@
          "modifier" : -1
       }
    },
-   
+   "ac": 10,
+   "xp": {
+      "current": 5,
+      "next": 10
+   },
+   "hp": {
+      "current": 5,
+      "max": 5
+   },
+   "languages": [
+      "Common", "Dwarvish"
+   ],
+   "gear": {
+      "coins": {
+         "gp": 0,
+         "sp": 0,
+         "cp": 0
+      }
+   },
    "atrg-meta": {
       "id": "1234567890",
       "game-system-id": "",

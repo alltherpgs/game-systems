@@ -1,47 +1,47 @@
 {
    "$schema": "../schema/shadowdark.json",
-   "name": "Foozledofus McBurljangles",
-   "ancestry": "Human",
+   "name": "Jorbin Ironhelm",
+   "ancestry": "Dwarf",
    "class": "Fighter",
-   "level": 4,
+   "level": 1,
    "alignment": "Lawful",
-   "background": "Scout",
-   "title": "Cavalier",
+   "background": "Soldier",
+   "title": "Squire",
    "xp": {
       "current": 0,
       "next": 10
    },
    "stats": {
       "str": {
-         "stat" : 10,
-         "modifier" : 0
+         "stat" : 17,
+         "modifier" : 3
       },
       "dex": {
          "stat" : 10,
          "modifier" : 0
       },
       "con": {
-         "stat" : 9,
-         "modifier" : -1
+         "stat" : 16,
+         "modifier" : 3
       },
       "int": {
-         "stat" : 5,
-         "modifier" : -3
-      },
-      "wis": {
-         "stat" : 14,
-         "modifier" : 2
-      },
-      "cha": {
          "stat" : 9,
          "modifier" : -1
+      },
+      "wis": {
+         "stat" : 12,
+         "modifier" : 1
+      },
+      "cha": {
+         "stat" : 11,
+         "modifier" : 0
       }
    },
    "hp": {
-      "max": 8,
-      "current": 8
+      "max": 10,
+      "current": 10
    },
-   "ac": 10,
+   "ac": 15,
    "attacks": [
       {
          "name": "Dagger",
@@ -49,7 +49,7 @@
          "damage": "1d4+2"
       }
    ],
-   "languages": [ "Common", "Dwarvish" ],
+   "languages": [ "Common" ],
    "deity": "Madeera The Covenant",
    "gear": {
       "coins": {
@@ -57,23 +57,14 @@
          "sp": 0,
          "cp": 0
       },
-      "items": [
+      "items" : [
          {
             "name": "Dagger",
             "quantity": 1
-         },
-         {
-            "name": "Thieves' Tools",
-            "quantity": 1
-         },
-         {
-            "name": "Leather Armor",
-            "quantity": 1
-         },
-         {
-            "name": "Burglar's Pack",
-            "quantity": 1
          }
+      ],
+      "freetocarry": [
+         "Backpack"
       ]
    },
    "talents": [
