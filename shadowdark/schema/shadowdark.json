@@ -50,7 +50,9 @@
       },
       "xp": {
          "description": "Your character's experience points gained by completing adventures.",
-         "type": "integer"
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 100
       },
       "stats" : {
          "description": "Your character's physical and mental attributes.",
@@ -407,9 +409,467 @@
             }
          },
          "then": { "properties": { "title": { "const": "Warlord"  } } }
+      },
+      {"$Comment": "PRIEST - LAWFUL - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Acolyte" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Crusader" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Templar" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Champion" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Paladin" } } }
+      },
+      {"$Comment": "PRIEST - NEUTRAL - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Seeker" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Invoker" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Haruspex" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Mystic" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Oracle"  } } }
+      },
+      {"$Comment": "PRIEST - CHAOTIC - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Initiate" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Zealot" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Cultist" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Scourge" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Priest" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Chaos Knight"  } } }
+      },
+      {"$Comment": "THIEF - LAWFUL - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Footpad" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Burglar" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Rook" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Underboss" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Boss" } } }
+      },
+      {"$Comment": "THIEF - NEUTRAL - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Robber" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Outlaw" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Rogue" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Renegade" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "enum": ["Bandit King", "Bandit Queen"]  } } }
+      },
+      {"$Comment": "THIEF - CHAOTIC - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Thug" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Cutthroat" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Shadow" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Assassin" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Thief" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Wraith" } } }
+      },
+      {"$Comment": "WIZARD - LAWFUL - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Apprentice" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Conjurer" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Arcanist" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Mage" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Archmage" } } }
+      },
+      {"$Comment": "WIZARD - NEUTRAL - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Shaman" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Seer" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Warden" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Sage" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Druid"  } } }
+      },
+      {"$Comment": "WIZARD - CHAOTIC - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Adept" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Channeler" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": {  "enum": ["Witch", "Warlock"] } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Diabolist" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Wizard" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Sorcerer" } } }
       }
    ],
-  
    "required": [ "name", "class", "title", "stats" ],
    "additionalProperties": false
 }
