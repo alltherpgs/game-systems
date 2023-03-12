@@ -124,20 +124,20 @@
          "items": {
             "type": "object",
             "properties": {
-               "name": {
-                  "description": "The name of the attack",
-                  "type": "string"
+               "weapon": {
+                  "description": "The attack / weapon",
+                  "$ref": "#/$defs/weapon"
                },
-               "attackbonus": {
+               "attackmodifier": {
                   "description": "The attack bonus",
                   "type": "integer"
                },
-               "damage": {
+               "damagemodifier": {
                   "description": "The damage",
-                  "type": "string"
+                  "type": "integer"
                }
             },
-            "required": [ "name", "attackbonus", "damage" ],
+            "required": [ "weapon", "attackmodifier", "damagemodifier" ],
             "additionalProperties": false
          }
       },
@@ -228,10 +228,16 @@
                         },
                         "quantity": {
                            "description": "The quantity carried in the slot",
-                           "type": "integer"
+                           "type": "integer",
+                           "default": 1
+                        },
+                        "slots": {
+                           "description": "The number of slots the item occupies",
+                           "type": "integer",
+                           "default": 1
                         }
                      },
-                     "required": [ "name", "quantity" ],
+                     "required": [ "name" ],
                      "additionalProperties": false
                   },
                   "minItems": 0
@@ -317,6 +323,55 @@
                "maximum": 4
             }
          },
+         "additionalProperties": false
+      },
+      "weapon":{
+         "type": "object",
+         "properties": {
+            "name": {
+               "description": "The name of the attack / weapon",
+               "type": "string"
+            },
+            "basedamage": {
+               "description": "The base weapon damage",
+               "type": "object",
+               "properties": {
+                  "dice": {
+                     "description": "The damage dice of the weapon or attack",
+                     "type": "string",
+                     "enum": ["1d4", "1d6", "1d8", "1d10", "1d12"]
+                  },
+                  "versatiledice": {
+                     "description": "The damage dice when used 2 handed for versatile weapons",
+                     "type": "string",
+                     "enum": ["1d4", "1d6", "1d8", "1d10", "1d12"]
+                  }
+               },
+               "required": [ "dice" ],
+               "additionalProperties": false
+            },
+            "type": {
+               "description": "The type of attack, melee or ranged or both",
+               "type": "string",
+               "enum": ["M", "R", "M/R"]
+            },
+            "range": {
+               "description": "The range of the attack (close, near, far) or multiple",
+               "type": "string",
+               "enum": ["C", "C/N", "F"]
+            },
+            "properties" : {
+               "description": "Your attacks properties, versatile, finesse, 2 slots, loading, thrown, 2-handed",
+               "type": "array",
+               "items": {
+                  "type": "string",
+                  "enum": ["V", "2 Slots", "L", "F", "Th", "2H"]
+               },
+               "uniqueItems": true,
+               "minItems": 0
+            }
+         },
+         "required": [ "name", "basedamage", "type", "range" ],
          "additionalProperties": false
       }
    },

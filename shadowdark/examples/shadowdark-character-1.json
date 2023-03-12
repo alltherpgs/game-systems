@@ -44,9 +44,17 @@
    "ac": 10,
    "attacks": [
       {
-         "name": "Dagger",
-         "attackbonus": 4,
-         "damage": "1d4+2"
+         "weapon": {
+            "name": "Spear",
+            "basedamage": {
+               "dice": "1d6"
+            },
+            "type":"M/R",
+            "range": "C/N",
+            "properties": ["Th"]
+         },
+         "attackmodifier": 3,
+         "damagemodifier": 0
       }
    ],
    "languages": [ "Common", "Dwarvish" ],

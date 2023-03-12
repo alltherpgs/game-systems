@@ -44,9 +44,31 @@
    "ac": 15,
    "attacks": [
       {
-         "name": "Dagger",
-         "attackbonus": 4,
-         "damage": "1d4+2"
+         "weapon": {
+            "name": "Greataxe",
+            "basedamage": {
+               "dice": "1d8",
+               "versatiledice": "1d10"
+            },
+            "type":"M",
+            "range": "C",
+            "properties": ["V", "2 Slots"]
+         },
+         "attackmodifier": 4,
+         "damagemodifier": 1
+      },
+      {
+         "weapon": {
+            "name": "Spear",
+            "basedamage": {
+               "dice": "1d6"
+            },
+            "type":"M/R",
+            "range": "C/N",
+            "properties": ["Th"]
+         },
+         "attackmodifier": 3,
+         "damagemodifier": 0
       }
    ],
    "languages": [ "Common" ],
@@ -59,9 +81,50 @@
       },
       "items" : [
          {
-            "name": "Dagger",
-            "quantity": 1
+            "name": "Chainmail",
+            "slots": 2
+         },
+         {
+            "name": "Greataxe",
+            "slots": 2
+         },
+         {
+            "name": "Shield"
+         },
+         {
+            "name": "Spear"
+         },
+         {
+            "name": "Spear"
+         },
+         {
+            "name": "Iron Spikes",
+            "quantity": 10
+         },
+         {
+            "name": "Grappling Hook"
+         },
+         {
+            "name": "Rope",
+            "quantity": 60
+         },
+         {
+            "name": "Flint and Steel"
+         },
+         {
+            "name": "Torch"
+         },
+         {
+            "name": "Torch"
+         },
+         {
+            "name": "Pole"
+         },
+         {
+            "name": "Rations",
+            "quantity": 3
          }
+
       ],
       "freetocarry": [
          "Backpack"
