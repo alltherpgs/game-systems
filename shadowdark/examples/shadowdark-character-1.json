@@ -90,12 +90,7 @@
          "description": "Once per turn, when you deal damage to a creature with a weapon attack and have advantage on the attack roll, you can deal an extra 1d6 damage to the target."
       }
    ],
-   "spells": [
-      {
-         "name": "Mage Hand",
-         "description": "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again."
-      }
-   ],
+   "spells": [ ],
    
    "atrg-meta": {
       "id": "1234567890",

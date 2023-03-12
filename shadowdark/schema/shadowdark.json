@@ -174,19 +174,7 @@
          "description": "Your character's spells.",
          "type": "array",
          "items": {
-            "type": "object",
-            "properties": {
-               "name": {
-                  "description": "The name of the spell",
-                  "type": "string"
-               },
-               "description": {
-                  "description": "The description of the spell",
-                  "type": "string"
-               }
-            },
-            "required": [ "name", "description" ],
-            "additionalProperties": false
+            "$ref": "#/$defs/spell"
          }
       },
       "gear": {
@@ -372,6 +360,36 @@
             }
          },
          "required": [ "name", "basedamage", "type", "range" ],
+         "additionalProperties": false
+      },
+      "spell": {
+         "type": "object",
+         "properties": {
+            "name": {
+               "description": "The name of the spell",
+               "type": "string"
+            },
+            "description": {
+               "description": "The description of the spell",
+               "type": "string"
+            },
+            "tier": {
+               "description": "The tier of the spell",
+               "type": "integer",
+               "minimum": 1,
+               "maximum": 5
+            },
+            "range": {
+               "description": "The range of the spell",
+               "type": "string",
+               "enum": ["C", "C/N", "F", "Self"]
+            },
+            "duration": {
+               "description": "The duration of the spell",
+               "type": "string"
+            }
+         },
+         "required": [ "name", "description", "tier", "range", "duration" ],
          "additionalProperties": false
       }
    },
