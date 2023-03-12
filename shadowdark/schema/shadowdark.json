@@ -1,0 +1,252 @@
+{
+   "$id": "https://https://github.com/alltherpgs/game-systems/shadowdark/schema/shadowdark.json",
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "title": "ShadowDark",
+   "description": "ShadowDark character schema",
+   "type": "object",
+   "properties": {
+      "$schema": {
+         "description": "JSON Schema for the character",
+         "type": "string"
+      },
+      "name": {
+         "description": "The character name",
+         "type": "string"
+      },
+      "ancestry": {
+         "description": "Your character's cultural and ancestral heritage.",
+         "type": "string"
+      },
+      "class": {
+         "description": "Your character's job.",
+         "type": "string"
+      },
+      "level": {
+         "description": "Your character's level and overall experience.",
+         "type": "integer"
+      },
+      "alignment": {
+         "description": "Your character's link to the opposing forces of Law and Chaos, or balanced Neutrality",
+         "type": "string"
+      },
+      "background": {   
+         "description": "Your history and past experience.",
+         "type": "string"
+      },
+      "deity": {
+         "description": "Your character's patron deity.",
+         "type": "string"
+      },
+      "title": {
+         "description": "As you gain levels, your prestige grows. Your title is based on your level, class, and alignment.",
+         "type": "string"
+      },
+      "xp": {
+         "description": "Your character's experience points gained by completing adventures.",
+         "type": "integer"
+      },
+      "stats" : {
+         "description": "Your character's physical and mental attributes.",
+         "type": "object",
+         "properties": {
+            "str": { 
+               "$ref": "#/$defs/stat", 
+               "description": "Fight with a sword, bash open doors, swim. Important for fighters."
+            },
+            "dex": {  
+               "$ref": "#/$defs/stat", 
+               "description": "Dexterity"  
+            },
+            "con": {
+               "$ref": "#/$defs/stat", 
+               "description": "Constitution"
+            },
+            "int": {
+               "$ref": "#/$defs/stat", 
+               "description": "Intelligence"
+            },
+            "wis": {
+               "$ref": "#/$defs/stat", 
+               "description": "Wisdom"
+            },
+            "cha": {
+               "$ref": "#/$defs/stat",
+               "description": "Charisma"
+            }
+         },
+         "required": [ "str", "dex", "con", "int", "wis", "cha" ],
+         "additionalProperties": false
+      },
+      "hp" : {
+         "description": "Hit points (HP) represent the amount of injury you can sustain before you die.",
+         "type": "object",
+         "properties": {
+            "current": {
+               "description": "Current hit points",
+               "type": "integer"
+            },
+            "max": {
+               "description": "Maximum hit points",
+               "type": "integer"
+            }
+         },
+         "required": [ "current", "max" ],
+         "additionalProperties": false
+      },
+      "ac" : {
+         "description": "Armor class (AC) is a type of difficulty class that shows how tough it is to injure you, whether because you're agile or you wear armor.",
+         "type": "integer"
+      },
+      "attacks" : {
+         "description": "Your character's attacks.",
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "description": "The name of the attack",
+                  "type": "string"
+               },
+               "attackbonus": {
+                  "description": "The attack bonus",
+                  "type": "integer"
+               },
+               "damage": {
+                  "description": "The damage",
+                  "type": "string"
+               }
+            },
+            "required": [ "name", "attackbonus", "damage" ],
+            "additionalProperties": false
+         }
+      },
+      "talents" : {
+         "description": "Your character's talents.",
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "description": "The name of the talent",
+                  "type": "string"
+               },
+               "description": {
+                  "description": "The description of the talent",
+                  "type": "string"
+               }
+            },
+            "required": [ "name", "description" ],
+            "additionalProperties": false
+         }
+      },
+      "spells" : {
+         "description": "Your character's spells.",
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "description": "The name of the spell",
+                  "type": "string"
+               },
+               "description": {
+                  "description": "The description of the spell",
+                  "type": "string"
+               }
+            },
+            "required": [ "name", "description" ],
+            "additionalProperties": false
+         }
+      },
+      "gear": {
+         "description": "Your character's gear.",
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "description": "The name of the item",
+                  "type": "string"
+               },
+               "quantity": {
+                  "description": "The quantity item",
+                  "type": "integer"
+               }
+            },
+            "required": [ "name", "quantity" ],
+            "additionalProperties": false
+         }
+      },
+      "atrg-meta": {
+         "type": "object",
+         "description": "AllTheRPGs Metadata for the character which is not part of the character sheet or game system",
+         "properties": {
+            "id": {
+               "description": "The character's unique system identifier",
+               "type": "string"
+            },
+            "game-system-id": {
+               "description": "The game system's unique system identifier",
+               "type": "string"
+            },
+            "game-system-name": {
+               "description": "The game system's name",
+               "type": "string"
+            },
+            "imgurl": {
+               "description": "url to the character's portrait",
+               "type": "string",
+               "format": "uri",
+               "pattern": "^https?://",
+               "examples": [
+                  "https://example.com/character.png"
+               ]
+            },
+            "notes": {
+               "description": "This is a note that will not be displayed on the character sheet. But will be associated with this instance of the character.",
+               "type": "string"
+            },
+            "tags": {
+               "description": "This is a list of tags that will not be displayed on the character sheet. But will be associated with this instance of the character.",
+               "type": "array",
+               "items": {
+                  "type": "string"
+               }
+            },
+            "created": {
+               "description": "The date and time the character was created",
+               "type": "string",
+               "format": "date-time"
+            },
+            "updated": {
+               "description": "The date and time the character was last updated",
+               "type": "string",
+               "format": "date-time"
+            }
+         },
+         "required": [ "id", "game-system-id", "game-system-name", "created", "updated" ],
+         "additionalProperties": false
+      }
+   },
+   "$defs": {
+      "stat": {
+        "type": "object",
+        "required": [ "stat", "modifier" ],
+        "properties": {
+            "stat": {
+               "description": "The value of the stat",
+               "type": "integer",
+               "minimum": 1
+            },
+            "modifier": {
+               "description": "The modifier of the stat",
+               "type": "integer",
+               "minimum": -4,
+               "maximum": 4
+            }
+         }
+      }
+   },
+   "required": [ "name" ],
+   "additionalProperties": false
+}

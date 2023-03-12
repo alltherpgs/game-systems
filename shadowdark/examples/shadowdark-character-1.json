@@ -1,0 +1,94 @@
+{
+   "$schema": "../schema/shadowdark.json",
+   "name": "Foozledofus McBurljangles",
+   "ancestry": "Human",
+   "class": "Rogue",
+   "level": 1,
+   "alignment": "Chaotic Evil",
+   "background": "Scout",
+   "deity": "None",
+   "title": "The Unlucky",
+   "xp": 0,
+   "stats": {
+      "str": {
+         "stat" : 10,
+         "modifier" : 0
+      },
+      "dex": {
+         "stat" : 10,
+         "modifier" : 0
+      },
+      "con": {
+         "stat" : 9,
+         "modifier" : -1
+      },
+      "int": {
+         "stat" : 5,
+         "modifier" : -3
+      },
+      "wis": {
+         "stat" : 14,
+         "modifier" : 2
+      },
+      "cha": {
+         "stat" : 9,
+         "modifier" : -1
+      }
+   },
+   "hp": {
+      "max": 8,
+      "current": 8
+   },
+   "ac": 10,
+   "attacks": [
+      {
+         "name": "Dagger",
+         "attackbonus": 4,
+         "damage": "1d4+2"
+      }
+   ],
+   "talents": [
+      {
+         "name": "Sneak Attack",
+         "description": "Once per turn, when you deal damage to a creature with a weapon attack and have advantage on the attack roll, you can deal an extra 1d6 damage to the target."
+      }
+   ],
+   "spells": [
+      {
+         "name": "Mage Hand",
+         "description": "A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again."
+      }
+   ],
+   "gear": [
+      {
+         "name": "Dagger",
+         "quantity": 1
+      },
+      {
+         "name": "Thieves' Tools",
+         "quantity": 1
+      },
+      {
+         "name": "Leather Armor",
+         "quantity": 1
+      },
+      {
+         "name": "Burglar's Pack",
+         "quantity": 1
+      }
+   ],
+   "atrg-meta": {
+      "id": "1234567890",
+      "game-system-id": "",
+      "game-system-name": "ShadowDark",
+      "imgurl": "http://example.com/image.png",
+      "notes": "My notes here",
+      "tags": [
+         "tag1",
+         "tag2"
+      ],
+      "created": "2018-01-01T00:00:00.000Z",
+      "updated": "2018-01-01T00:00:00.000Z"
+   }
+
+}
