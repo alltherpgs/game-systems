@@ -1,5 +1,5 @@
 {
-   "$id": "https://https://github.com/alltherpgs/game-systems/shadowdark/schema/shadowdark.json",
+   "$id": "https://github.com/alltherpgs/game-systems/shadowdark/schema/shadowdark.json",
    "$schema": "https://json-schema.org/draft/2020-12/schema",
    "title": "ShadowDark",
    "description": "ShadowDark character schema",
@@ -15,27 +15,34 @@
       },
       "ancestry": {
          "description": "Your character's cultural and ancestral heritage.",
-         "type": "string"
+         "type": "string",
+         "enum": [ "Human", "Elf", "Dwarf", "Halfling", "Goblin", "Half-Orc"]
       },
       "class": {
          "description": "Your character's job.",
-         "type": "string"
+         "type": "string",
+         "enum": [ "Fighter", "Priest", "Wizard", "Thief" ]
       },
       "level": {
          "description": "Your character's level and overall experience.",
-         "type": "integer"
+         "type": "integer",
+         "minimum": 1,
+         "maximum": 10
       },
       "alignment": {
          "description": "Your character's link to the opposing forces of Law and Chaos, or balanced Neutrality",
-         "type": "string"
+         "type": "string",
+         "enum": [ "Lawful", "Neutral", "Chaotic" ]
       },
       "background": {   
          "description": "Your history and past experience.",
-         "type": "string"
+         "type": "string",
+         "enum": ["Urchin", "Wanted","Cult Initiate", "Thieves' Guild", "Banished", "Orphaned", "Wizard's Apprentice", "Jeweler", "Herbalist", "Barbarian", "Mercenary", "Sailor", "Acolyte", "Soldier", "Ranger", "Scout", "Minstrel", "Scholar", "Noble", "Chirurgeon", "Other" ]
       },
       "deity": {
          "description": "Your character's patron deity.",
-         "type": "string"
+         "type": "string",
+         "enum": ["Saint Terragnis","Gede","Madeera The Covenant","Ord","Memmon","Shune The Vile","Ramlaat","The Lost","None", "Other"]
       },
       "title": {
          "description": "As you gain levels, your prestige grows. Your title is based on your level, class, and alignment.",
@@ -247,6 +254,162 @@
          }
       }
    },
-   "required": [ "name" ],
+   "allOf": [
+      {"$Comment": "FIGHTER - LAWFUL - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Squire" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Cavalier" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Knight" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Thane" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Lawful" }
+            }
+         },
+         "then": { "properties": { "title": { "enum": ["Lord", "Lady"] } } }
+      },
+      {"$Comment": "FIGHTER - NEUTRAL - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Warrior" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Barbarian" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Battlerager" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Warchief" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Neutral" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Chieftan"  } } }
+      },
+      {"$Comment": "FIGHTER - CHAOTIC - TITLE Validation ==================================================================" },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 1, "maximum": 2 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Knave" } }}
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 3, "maximum": 4 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Bandit" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 5, "maximum": 6 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Slayer" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 7, "maximum": 8 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Reaver" } } }
+      },
+      {
+         "if": {
+            "properties": { 
+               "class": { "const": "Fighter" }, 
+               "level": { "minimum": 9, "maximum": 10 },
+               "alignment": { "const": "Chaotic" }
+            }
+         },
+         "then": { "properties": { "title": { "const": "Warlord"  } } }
+      }
+   ],
+  
+   "required": [ "name", "class", "title", "stats" ],
    "additionalProperties": false
 }

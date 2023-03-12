@@ -2,12 +2,12 @@
    "$schema": "../schema/shadowdark.json",
    "name": "Foozledofus McBurljangles",
    "ancestry": "Human",
-   "class": "Rogue",
+   "class": "Fighter",
    "level": 1,
-   "alignment": "Chaotic Evil",
+   "alignment": "Lawful",
    "background": "Scout",
-   "deity": "None",
-   "title": "The Unlucky",
+   "deity": "Madeera The Covenant",
+   "title": "Squire",
    "xp": 0,
    "stats": {
       "str": {

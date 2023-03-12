@@ -1,0 +1,52 @@
+{
+   "$schema": "../schema/shadowdark.json",
+   "name": "Tranglestomp Fudlydump",
+   "ancestry":"Dwarf",
+   "class": "Thief",
+   "level": 1,
+   "alignment": "Lawful",
+   "background": "Scout",
+   "deity": "None",
+   "title": "Jester",
+   "stats": {
+      "str": {
+         "stat" : 10,
+         "modifier" : 0
+      },
+      "dex": {
+         "stat" : 10,
+         "modifier" : 0
+      },
+      "con": {
+         "stat" : 9,
+         "modifier" : -1
+      },
+      "int": {
+         "stat" : 5,
+         "modifier" : -3
+      },
+      "wis": {
+         "stat" : 14,
+         "modifier" : 2
+      },
+      "cha": {
+         "stat" : 9,
+         "modifier" : -1
+      }
+   },
+   
+   "atrg-meta": {
+      "id": "1234567890",
+      "game-system-id": "",
+      "game-system-name": "ShadowDark",
+      "imgurl": "http://example.com/image.png",
+      "notes": "My notes here",
+      "tags": [
+         "tag1",
+         "tag2"
+      ],
+      "created": "2018-01-01T00:00:00.000Z",
+      "updated": "2018-01-01T00:00:00.000Z"
+   }
+
+}
